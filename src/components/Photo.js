@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Photo = ({ post }) => {
+const Photo = ({ post, onDelete }) => {
   return (
 
     <figure className="figure">
@@ -10,12 +10,12 @@ const Photo = ({ post }) => {
         <p> {post.description} </p>
       </figcaption>
       <div className="button-container">
-        <button className="button">
+        <button className="button" onClick={() => onDelete(post.id)}>
           Remove
         </button>
       </div>
     </figure>
-  )
+  );
 }
 
 
