@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 const Photo = ({ post, onDelete }) => {
@@ -16,6 +17,12 @@ const Photo = ({ post, onDelete }) => {
       </div>
     </figure>
   );
+}
+
+
+Photo.propTypes = {
+  post: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired
 }
 
 
