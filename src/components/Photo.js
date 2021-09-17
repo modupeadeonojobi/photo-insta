@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Photo = ({ post, onDelete }) => {
+const Photo = ({ post, removePost, index }) => {
   return (
 
     <figure className="figure">
@@ -11,7 +11,7 @@ const Photo = ({ post, onDelete }) => {
         <p> {post.description} </p>
       </figcaption>
       <div className="button-container">
-        <button className="button" onClick={() => onDelete(post.id)}>
+        <button className="button" onClick={() => removePost(index)}>
           Remove
         </button>
       </div>
@@ -22,7 +22,7 @@ const Photo = ({ post, onDelete }) => {
 
 Photo.propTypes = {
   post: PropTypes.object.isRequired,
-  onDelete: PropTypes.func.isRequired
+  // onDelete: PropTypes.func.isRequired
 }
 
 

@@ -16,18 +16,19 @@ class AddPhoto extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const imageLink = event.target.elements.link.value;
     const description = event.target.elements.description.value;
+    const imageLink = event.target.elements.link.value;
+
     const post = {
       id: Number(new Date()),
       description: description,
       imageLink: imageLink
     }
-    if (imageLink && description) {
-      this.props.onAddPhoto(post)
 
+    if (description && imageLink) {
+      this.props.addPost(post);
+      this.props.onHistory.push('/');
     }
-
   }
 }
 

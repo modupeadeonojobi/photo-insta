@@ -1,12 +1,10 @@
-import { applyMiddleware, createStore } from "redux";
-import reducers from "./reducers";
-import thunk from "redux-thunk";
+import { createStore } from "redux";
+import rootReducer from "./reducers/posts-reducers";
 
 
 const store = createStore(
-  reducers,
-  {},
-  applyMiddleware(thunk)
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 export default store;
